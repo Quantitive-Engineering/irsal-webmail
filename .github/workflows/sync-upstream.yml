@@ -1,0 +1,48 @@
+name: Sync with upstream Bulwark Webmail
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # daily at 3am UTC
+  workflow_dispatch: # allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout irsal-webmail
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SYNC_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "irsal-bot"
+          git config user.email "support@irsal.cloud"
+
+      - name: Add upstream remote
+        run: git remote add upstream https://github.com/nicholasgasior/bulwark.git || true
+
+      - name: Fetch upstream
+        run: git fetch upstream
+
+      - name: Checkout or create sync branch
+        run: |
+          git checkout sync/upstream 2>/dev/null || git checkout -b sync/upstream
+
+      - name: Merge upstream main
+        run: git merge upstream/main --no-edit || true
+
+      - name: Push sync branch
+        run: git push origin sync/upstream
+
+      - name: Open PR if changes exist
+        env:
+          GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          gh pr create \
+            --base main \
+            --head sync/upstream \
+            --title "chore: sync with upstream bulwark $(date +'%Y-%m-%d')" \
+            --body "Automated upstream sync from Bulwark Webmail. Review before merging into main." \
+            || echo "PR already exists or no changes"
