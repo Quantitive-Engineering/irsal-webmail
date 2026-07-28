@@ -21,7 +21,7 @@ jobs:
           git config user.email "support@irsal.cloud"
 
       - name: Add upstream remote
-        run: git remote add upstream https://github.com/nicholasgasior/bulwark.git || true
+        run: git remote add upstream https://github.com/daemonless/bulwark-webmail.git || true
 
       - name: Fetch upstream
         run: git fetch upstream
