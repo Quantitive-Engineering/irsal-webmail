@@ -1,39 +1,35 @@
-name: bulwark-webmail
-
-x-daemonless:
-  title: "Bulwark Webmail"
-  icon: ":material-email:"
-  category: "Productivity"
-  description: "Modern self-hosted webmail client for Stalwart Mail Server, powered by JMAP."
-  upstream_url: "https://github.com/bulwarkmail/webmail"
-  web_url: "https://bulwarkmail.org/"
-  user: "bsd"
-  mlock: false
-  appjail: true
-
-  docs:
-    env:
-      JMAP_SERVER_URL: "URL of your Stalwart JMAP server (e.g. https://mail.example.com)"
-      TZ: "Timezone for the container"
-    volumes:
-      /config: "Admin config, settings sync, and telemetry state"
-    ports:
-      3000: "Web UI"
+name: irsalmail-webmail
 
 services:
-  bulwark-webmail:
-    image: ghcr.io/daemonless/bulwark-webmail:latest
-    container_name: bulwark-webmail
+  irsalmail-webmail:
+    image: ghcr.io/quantitive-engineering/irsal-webmail:latest
+    container_name: irsalmail-webmail
     restart: unless-stopped
 
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-      - JMAP_SERVER_URL=https://mail.example.com
+      - TZ=Asia/Muscat
+      - JMAP_SERVER_URL=https://mail.irsal.cloud
+      - APP_NAME=IrsalMail
+      - APP_SHORT_NAME=Irsal
+      - APP_DESCRIPTION=Enterprise Communication, Reimagined
+      - FAVICON_URL=/branding/irsal-favicon.ico
+      - PWA_ICON_URL=/branding/irsal-icon.svg
+      - PWA_THEME_COLOR=#26a269
+      - PWA_BACKGROUND_COLOR=#f7f7f8
+      - APP_LOGO_LIGHT_URL=/branding/irsal-logo-color.svg
+      - APP_LOGO_DARK_URL=/branding/irsal-logo-dark.svg
+      - LOGIN_LOGO_LIGHT_URL=/branding/irsal-login-logo-color.svg
+      - LOGIN_LOGO_DARK_URL=/branding/irsal-login-logo-dark.svg
+      - LOGIN_COMPANY_NAME=IrsalMail
+      - LOGIN_WEBSITE_URL=https://irsal.cloud
+      - LOGIN_PRIVACY_POLICY_URL=https://irsal.cloud/privacy
+      - LOGIN_SHOW_VERSION=false
+      - STALWART_FEATURES=true
+      - BULWARK_TELEMETRY=off
+      - BULWARK_UPDATE_CHECK=off
 
     volumes:
-      - /path/to/containers/bulwark-webmail:/config
+      - /opt/irsalmail/webmail:/app/data
 
     ports:
       - 3000:3000
