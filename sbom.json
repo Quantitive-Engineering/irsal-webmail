@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-16T10:56:30Z",
+  "generated": "2026-08-26T07:58:52Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.8.1",
+      "app_version": "1.9.0",
       "arch": "amd64",
-      "generated": "2026-08-16T10:55:54Z",
+      "generated": "2026-08-26T07:57:06Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.125"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -404,7 +404,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.6"
+            "version": "4.6.8"
           },
           {
             "licenses": [
@@ -480,17 +480,17 @@
           {
             "name": "@img/sharp-wasm32",
             "purl": "",
-            "version": "0.34.5"
+            "version": "0.35.3"
           },
           {
             "name": "@next/env",
             "purl": "",
-            "version": "16.2.11"
+            "version": "16.3.3"
           },
           {
             "name": "@swc/helpers",
             "purl": "",
-            "version": "0.5.15"
+            "version": "0.5.23"
           },
           {
             "name": "baseline-browser-mapping",
@@ -500,7 +500,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.8.1"
+            "version": "1.9.0"
           },
           {
             "name": "caniuse-lite",
@@ -530,12 +530,12 @@
           {
             "name": "nanoid",
             "purl": "",
-            "version": "3.3.16"
+            "version": "3.3.18"
           },
           {
             "name": "next",
             "purl": "",
-            "version": "16.2.11"
+            "version": "16.3.3"
           },
           {
             "name": "picocolors",
@@ -545,7 +545,7 @@
           {
             "name": "postcss",
             "purl": "",
-            "version": "8.4.31"
+            "version": "8.5.23"
           },
           {
             "name": "react",
@@ -560,7 +560,7 @@
           {
             "name": "react-is",
             "purl": "",
-            "version": "19.3.0-canary-3f0b9e61-20260317"
+            "version": "19.3.0-canary-cbb046ab-20260731"
           },
           {
             "name": "react-refresh",
@@ -575,12 +575,12 @@
           {
             "name": "semver",
             "purl": "",
-            "version": "7.7.4"
+            "version": "7.8.5"
           },
           {
             "name": "sharp",
             "purl": "",
-            "version": "0.34.5"
+            "version": "0.35.3"
           },
           {
             "name": "source-map-js",
