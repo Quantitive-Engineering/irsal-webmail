@@ -41,7 +41,7 @@ services:
       - TZ=UTC  # Timezone for the container
       - JMAP_SERVER_URL=https://mail.example.com  # URL of your Stalwart JMAP server (e.g. https://mail.example.com)
     volumes:
-      - "/path/to/containers/bulwark-webmail:/config"
+      - "/containers/bulwark-webmail:/config"
     ports:
       - "3000:3000"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
@@ -88,7 +88,7 @@ services:
       - bulwark-webmail: /config
 volumes:
   bulwark-webmail:
-    device: '/path/to/containers/bulwark-webmail'
+    device: '/containers/bulwark-webmail'
 ```
 
 **Makejail**:
@@ -120,7 +120,7 @@ podman run -d --name bulwark-webmail \
   -e PGID=1000 \
   -e TZ=UTC \
   -e JMAP_SERVER_URL=https://mail.example.com \
-  -v /path/to/containers/bulwark-webmail:/config \
+  -v /containers/bulwark-webmail:/config \
   ghcr.io/daemonless/bulwark-webmail:latest
 ```
 
@@ -140,7 +140,7 @@ appjail oci run -Pd \
   -e PGID=1000 \
   -e TZ=UTC \
   -e JMAP_SERVER_URL=https://mail.example.com \
-  -o fstab="/path/to/containers/bulwark-webmail /config <pseudofs>" \
+  -o fstab="/containers/bulwark-webmail /config <pseudofs>" \
   ghcr.io/daemonless/bulwark-webmail:latest bulwark-webmail
 ```
 
@@ -170,7 +170,7 @@ services:
       - TZ=UTC
       - JMAP_SERVER_URL=https://mail.example.com
     volumes:
-      - "/path/to/containers/bulwark-webmail:/config"
+      - "/containers/bulwark-webmail:/config"
 ```
 
 Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
@@ -181,7 +181,7 @@ bastille create -O \
   --env PGID=1000 \
   --env TZ=UTC \
   --env JMAP_SERVER_URL=https://mail.example.com \
-  --volume /path/to/containers/bulwark-webmail /config \
+  --volume /containers/bulwark-webmail /config \
   bulwark-webmail ghcr.io/daemonless/bulwark-webmail:latest inherit
 ```
 
@@ -202,7 +202,7 @@ bastille create -O \
     ports:
       - "3000:3000"
     volumes:
-      - "/path/to/containers/bulwark-webmail:/config"
+      - "/containers/bulwark-webmail:/config"
 ```
 
 Save as `bulwark-webmail-deploy.yaml`, then run `ansible-playbook bulwark-webmail-deploy.yaml`.
