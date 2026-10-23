@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-21T22:29:36Z",
+  "generated": "2026-10-22T22:18:04Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.17.0",
+      "app_version": "1.17.1",
       "arch": "amd64",
-      "generated": "2026-10-21T22:28:50Z",
+      "generated": "2026-10-22T22:17:28Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -499,7 +499,7 @@
           {
             "name": "@next/env",
             "purl": "",
-            "version": "16.3.8"
+            "version": "16.4.2"
           },
           {
             "name": "@swc/helpers",
@@ -514,7 +514,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.17.0"
+            "version": "1.17.1"
           },
           {
             "name": "caniuse-lite",
@@ -549,7 +549,7 @@
           {
             "name": "next",
             "purl": "",
-            "version": "16.3.8"
+            "version": "16.4.2"
           },
           {
             "name": "picocolors",
@@ -574,7 +574,7 @@
           {
             "name": "react-is",
             "purl": "",
-            "version": "19.3.0-canary-cbb046ab-20260731"
+            "version": "19.3.0-canary-278794d7-20261002"
           },
           {
             "name": "react-refresh",
