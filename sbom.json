@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-22T22:18:04Z",
+  "generated": "2026-10-24T21:32:14Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.17.1",
+      "app_version": "1.17.2",
       "arch": "amd64",
-      "generated": "2026-10-22T22:17:28Z",
+      "generated": "2026-10-24T21:31:38Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -266,7 +266,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.131.1"
           },
           {
             "licenses": [
@@ -371,14 +371,6 @@
           },
           {
             "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "merve",
-            "version": "1.2.2_3"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "nbytes",
@@ -389,7 +381,7 @@
               "MIT"
             ],
             "name": "node24",
-            "version": "24.21.0_1"
+            "version": "24.21.0_3"
           },
           {
             "licenses": [
@@ -418,15 +410,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
-          },
-          {
-            "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "simdutf",
-            "version": "9.2.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -514,7 +498,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.17.1"
+            "version": "1.17.2"
           },
           {
             "name": "caniuse-lite",
@@ -615,7 +599,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 63,
+        "freebsd": 61,
         "go": 0,
         "java": 0,
         "node": 29,
@@ -623,7 +607,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 92
+        "total": 90
       }
     }
   }
